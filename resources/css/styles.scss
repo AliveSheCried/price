@@ -1,0 +1,147 @@
+/* variables */
+$clr_white: #ffffff;
+$clr_green: #bfdf32;
+$clr_gray: #acb2be;
+$clr_tealDark: #2bb3b1;
+$clr-tealLight: #4abebd;
+$clr-whiteTrans: rgba($color: #ffffff, $alpha: 0.4);
+
+/* Global */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+ul {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: calc(13px + (20 - 13) * ((100vw - 360px) / (900 - 360)));
+}
+
+
+
+ul li {
+    list-style-type: none;
+    color: $clr-whiteTrans;
+    line-height: 5vw;
+    
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+h1 {
+    color: $clr_tealDark;
+    font-size: 6vw;
+}
+
+h2 {
+    color: $clr_green;
+    font-size: 5vw;
+}
+
+p {
+    color: $clr_gray;
+    font-size: 5vw;
+    line-height: 8vw;
+}
+
+.white,
+.price {
+    color: $clr_white;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 9vw;    
+
+    &::after {
+        content: "  per month";
+        font-size: 5vw;
+        font-weight: normal;
+        color: $clr-whiteTrans;
+        padding-left: 15px;       
+       
+    }
+    
+}
+
+
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid */
+
+.grid {
+    display: grid;
+    @media only screen and (max-width: 480px) {
+        grid-template-columns: 320px;
+        grid-template-rows: 320px;
+    }
+    grid-gap: 0px;    
+
+    &-1 {
+        @media only screen and (max-width: 480px) {
+            grid-column: 1 / 2;
+         }
+        grid-row: 1;
+        background-color: $clr_white;
+        padding: 20px;
+        
+    }
+
+    &-2 {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        background-color: $clr_tealDark;
+        padding: 20px;
+        
+    }
+
+    &-3 {
+        @media only screen and (max-width: 480px) {
+        grid-column: 1 / 2;
+        grid-row: 3;
+        }
+        background-color: $clr_tealLight;
+        padding: 20px;
+        
+        
+
+    }
+}
+
+/* Button */
+.button {
+    display: block;
+    color: $clr_white;
+    font-weight: bold;
+    background-color: $clr_green;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 10px 25px #979797;
+
+    &:hover {
+        color: $clr_green;
+        background-color: $clr_white;
+        box-shadow: none;
+    }
+
+}
